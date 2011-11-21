@@ -42,12 +42,16 @@
 	<artifactId>demoiselle-component-parent</artifactId>
 	<version>1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	
+
+	<name>Demoiselle Component Parent</name>
+	<description>
+		Contém as informações de build comum a todos os componentes do Demoiselle.
+	</description>
+
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-root-parent</artifactId>
 		<version>1-SNAPSHOT</version>
 		<relativePath>../root/pom.xml</relativePath>
 	</parent>
-
 </project>

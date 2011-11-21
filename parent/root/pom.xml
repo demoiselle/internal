@@ -613,10 +613,14 @@
 	</repositories>
 
 	<properties>
-		<htdocs.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</htdocs.url>
-		<site.url>${htdocs.url}/framework/${project.version}/parent/${project.name}</site.url>
-		<repository.url>${htdocs.url}/repository/release</repository.url>
-		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
+		<!--
+		<base.url>file:///tmp/demoiselle-output</base.url>
+		-->
+
+		<base.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</base.url>
+		<site.url>${base.url}/framework/${project.version}/parent/${project.name}</site.url>
+		<repository.url>${base.url}/repository/release</repository.url>
+		<snapshot.url>${base.url}/repository/snapshot</snapshot.url>
 		<svn.host>demoiselle.svn.sourceforge.net</svn.host>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 

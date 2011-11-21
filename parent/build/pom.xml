@@ -85,13 +85,6 @@
 					<developmentVersion>${project.nextVersion}</developmentVersion>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<configuration>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -119,13 +112,9 @@
 		</pluginManagement>
 	</build>
 
-	<properties>
-		<upload.url>sftp://web.sourceforge.net/home/frs/project/d/de/demoiselle</upload.url>
-		<htdocs.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</htdocs.url>
-		<site.url>${htdocs.url}/framework/${project.version}/parent/${project.name}</site.url>
-		<repository.url>${htdocs.url}/repository/release</repository.url>
-		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
-		<svn.host>demoiselle.svn.sourceforge.net</svn.host>
-	</properties>
-
+	<scm>
+		<connection>scm:git:git@github.com:demoiselle/${project.id}.git</connection>
+		<developerConnection>scm:git:git@github.com:demoiselle/${project.id}.git</developerConnection>
+		<url>https://github.com/demoiselle/${project.id}</url>
+	</scm>
 </project>
