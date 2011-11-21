@@ -1,0 +1,131 @@
+<!--
+ Demoiselle Framework
+ Copyright (C) 2010 SERPRO
+ ============================================================================
+ This file is part of Demoiselle Framework.
+ 
+ Demoiselle Framework is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public License version 3
+ as published by the Free Software Foundation.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU Lesser General Public License version 3
+ along with this program; if not,  see <http://www.gnu.org/licenses />
+ or write to the Free Software Foundation, Inc., 51 Franklin Street,
+ Fifth Floor, Boston, MA  02110-1301, USA.
+ ============================================================================
+ Este arquivo é parte do Framework Demoiselle.
+ 
+ O Framework Demoiselle é um software livre; você pode redistribuí-lo e/ou
+ modificá-lo dentro dos termos da GNU LGPL versão 3 como publicada pela Fundação
+ do Software Livre (FSF).
+ 
+ Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA
+ GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer MERCADO ou
+ APLICAÇÃO EM PARTICULAR. Veja a Licença Pública Geral GNU/LGPL em português
+ para maiores detalhes.
+ 
+ Você deve ter recebido uma cópia da GNU LGPL versão 3, sob o título
+ "LICENCA.txt", junto com esse programa. Se não, acesse <http://www.gnu.org/licenses />
+ ou escreva para a Fundação do Software Livre (FSF) Inc.,
+ 51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>demoiselle-build-parent</artifactId>
+	<version>1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>br.gov.frameworkdemoiselle</groupId>
+		<artifactId>demoiselle-root-parent</artifactId>
+		<version>1-SNAPSHOT</version>
+		<relativePath>../root/pom.xml</relativePath>
+	</parent>
+
+	<name>Demoiselle Parent</name>
+	<description>
+		Contém as informações de build comum a todos os projetos do Framework Demoiselle.
+		Se você é usuário do framework, certamente este POM não servirá para você.
+	</description>
+	<url>http://www.frameworkdemoiselle.gov.br/</url>
+
+	<organization>
+		<name>SERPRO - Serviço Federal de Processamento de Dados</name>
+		<url>http://www.frameworkdemoiselle.gov.br/</url>
+	</organization>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<configuration>
+					<serverId>demoiselle.sourceforge.net</serverId>
+					<url>${upload.url}</url>
+					<fromDir>${project.build.directory}/assembly</fromDir>
+					<toDir>framework/${project.version}</toDir>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<preparationGoals>clean install</preparationGoals>
+					<goals>deploy wagon:upload site site:deploy</goals>
+					<developmentVersion>${project.nextVersion}</developmentVersion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<configuration>
+						<finalName>demoiselle-framework-${project.version}</finalName>
+						<outputDirectory>${project.build.directory}/assembly</outputDirectory>
+						<descriptors>
+							<descriptor>assembly/src.xml</descriptor>
+							<descriptor>assembly/bin.xml</descriptor>
+						</descriptors>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>assembly</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<properties>
+		<upload.url>sftp://web.sourceforge.net/home/frs/project/d/de/demoiselle</upload.url>
+		<htdocs.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</htdocs.url>
+		<site.url>${htdocs.url}/framework/${project.version}/parent/${project.name}</site.url>
+		<repository.url>${htdocs.url}/repository/release</repository.url>
+		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
+		<svn.host>demoiselle.svn.sourceforge.net</svn.host>
+	</properties>
+
+</project>
