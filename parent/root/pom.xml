@@ -660,10 +660,10 @@
 		<commons.configuration.version>1.5</commons.configuration.version>
 		<hsqldb.version>1.8.0.10</hsqldb.version>
 
-		<demoiselle.junit>2.2.1</demoiselle.junit>
-		<demoiselle.vaadin>2.2.1</demoiselle.vaadin>
-		<demoiselle.shiro>2.2.1</demoiselle.shiro>
-		<demoiselle.valitation>2.0.0</demoiselle.valitation>
+		<demoiselle.junit.version>2.2.1</demoiselle.junit.version>
+		<demoiselle.vaadin.version>2.2.1</demoiselle.vaadin.version>
+		<demoiselle.shiro.version>2.2.1</demoiselle.shiro.version>
+		<demoiselle.valitation.version>2.0.0</demoiselle.valitation.version>
 		<demoiselle.report.version>2.0.1</demoiselle.report.version>
 		<demoiselle.authorization.version>2.0.1</demoiselle.authorization.version>
 	</properties>
