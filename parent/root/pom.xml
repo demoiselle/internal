@@ -392,10 +392,6 @@
 	</dependencyManagement>
 
 	<distributionManagement>
-<!-- 		<site> -->
-<!-- 			<id>demoiselle.sourceforge.net</id> -->
-<!-- 			<url>file://${project.build.directory}/tmp</url> -->
-<!-- 		</site> -->
 		<repository>
 			<id>demoiselle.sourceforge.net</id>
 			<url>${repository.url}</url>
@@ -421,14 +417,6 @@
 				<artifactId>wagon-maven-plugin</artifactId>
 				<configuration>
 					<url>.</url>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<configuration>
-					<siteDirectory>${basedir}/site</siteDirectory>
 					<skip>true</skip>
 				</configuration>
 			</plugin>
@@ -480,6 +468,8 @@
 						<inputEncoding>${project.build.sourceEncoding}</inputEncoding>
 						<outputEncoding>${project.build.sourceEncoding}</outputEncoding>
 						<locales>pt_BR</locales>
+						<skip>true</skip>
+						<skipDeploy>true</skipDeploy>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -583,14 +573,6 @@
 			</snapshots>
 		</repository>
 		<repository>
-			<id>eclipselink-repo</id>
-			<name>EclipseLink Maven Repo</name>
-			<url>http://eclipse.ialto.org/rt/eclipselink/maven.repo/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
 			<id>glassfish-repo</id>
 			<name>Glassfish Maven Repo</name>
 			<url>http://download.java.net/maven/glassfish</url>
@@ -621,27 +603,26 @@
 	</repositories>
 
 	<properties>
-		<!--
 		<base.url>file:///tmp/demoiselle-output</base.url>
+		<!--
+		<base.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</base.url>
 		-->
 
-		<base.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</base.url>
-		<site.url>${base.url}/framework/${project.version}/parent/${project.name}</site.url>
 		<repository.url>${base.url}/repository/release</repository.url>
 		<snapshot.url>${base.url}/repository/snapshot</snapshot.url>
 		<svn.host>demoiselle.svn.sourceforge.net</svn.host>
+
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<maven.compiler.plugin.version>2.1</maven.compiler.plugin.version>
 		<maven.war.plugin.version>2.1.1</maven.war.plugin.version>
 		<maven.deploy.plugin.version>2.5</maven.deploy.plugin.version>
-		<maven.site.plugin.version>2.2</maven.site.plugin.version>
+		<maven.site.plugin.version>3.0</maven.site.plugin.version>
 		<maven.assembly.plugin.version>2.2-beta-5</maven.assembly.plugin.version>
 		<maven.javadoc.plugin.version>2.7</maven.javadoc.plugin.version>
 		<maven.source.plugin.version>2.1.2</maven.source.plugin.version>
 		<maven.resources.plugin.version>2.5</maven.resources.plugin.version>
 		<maven.cobertura.plugin.version>2.4</maven.cobertura.plugin.version>
-		<maven.site.plugin.version>3.0</maven.site.plugin.version>
 
 		<java.version>1.6</java.version>
 		<javaee.version>6.0</javaee.version>

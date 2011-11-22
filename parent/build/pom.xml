@@ -72,7 +72,7 @@
 						<serverId>demoiselle.sourceforge.net</serverId>
 						<url>${upload.url}</url>
 						<fromDir>${project.build.directory}/assembly</fromDir>
-						<toDir>${project.id}/${project.version}</toDir>
+						<toDir>${project.alias}/${project.version}</toDir>
 						<skip>false</skip>
 					</configuration>
 				</plugin>
@@ -84,6 +84,13 @@
 						<preparationGoals>clean install</preparationGoals>
 						<goals>deploy wagon:upload site site:deploy</goals>
 						<developmentVersion>${project.nextVersion}</developmentVersion>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<configuration>
+						<siteDirectory>${basedir}/site</siteDirectory>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -111,8 +118,13 @@
 	</build>
 
 	<scm>
-		<connection>scm:git:git@github.com:demoiselle/${project.id}.git</connection>
-		<developerConnection>scm:git:git@github.com:demoiselle/${project.id}.git</developerConnection>
-		<url>https://github.com/demoiselle/${project.id}</url>
+		<connection>scm:git:git@github.com:demoiselle/${project.alias}.git</connection>
+		<developerConnection>scm:git:git@github.com:demoiselle/${project.alias}.git</developerConnection>
+		<url>https://github.com/demoiselle/${project.alias}</url>
 	</scm>
+
+	<properties>
+		<site.context>${project.alias}</site.context>
+		<site.url>${base.url}/${site.context}/${project.version}/</site.url>
+	</properties>
 </project>
