@@ -603,10 +603,10 @@
 	</repositories>
 
 	<properties>
-		<base.url>file:///tmp/demoiselle-output</base.url>
 		<!--
-		<base.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</base.url>
+		<base.url>file:///tmp/demoiselle-output</base.url>
 		-->
+		<base.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</base.url>
 
 		<repository.url>${base.url}/repository/release</repository.url>
 		<snapshot.url>${base.url}/repository/snapshot</snapshot.url>
