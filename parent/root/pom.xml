@@ -355,22 +355,22 @@
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle.component</groupId>
 				<artifactId>demoiselle-junit</artifactId>
-				<version>${demoiselle.junit}</version>
+				<version>${demoiselle.junit.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle.component</groupId>
 				<artifactId>demoiselle-shiro</artifactId>
-				<version>${demoiselle.shiro}</version>
+				<version>${demoiselle.shiro.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle.component</groupId>
 				<artifactId>demoiselle-vaadin</artifactId>
-				<version>${demoiselle.vaadin}</version>
+				<version>${demoiselle.vaadin.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle.component</groupId>
 				<artifactId>demoiselle-validation</artifactId>
-				<version>${demoiselle.valitation}</version>
+				<version>${demoiselle.valitation.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle.component</groupId>
@@ -421,6 +421,14 @@
 				<artifactId>wagon-maven-plugin</artifactId>
 				<configuration>
 					<url>.</url>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<configuration>
+					<siteDirectory>${basedir}/site</siteDirectory>
 					<skip>true</skip>
 				</configuration>
 			</plugin>
@@ -633,7 +641,7 @@
 		<maven.source.plugin.version>2.1.2</maven.source.plugin.version>
 		<maven.resources.plugin.version>2.5</maven.resources.plugin.version>
 		<maven.cobertura.plugin.version>2.4</maven.cobertura.plugin.version>
-		<maven.site.plugin.version>2.2</maven.site.plugin.version>
+		<maven.site.plugin.version>3.0</maven.site.plugin.version>
 
 		<java.version>1.6</java.version>
 		<javaee.version>6.0</javaee.version>

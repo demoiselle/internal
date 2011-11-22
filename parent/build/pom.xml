@@ -72,7 +72,7 @@
 						<serverId>demoiselle.sourceforge.net</serverId>
 						<url>${upload.url}</url>
 						<fromDir>${project.build.directory}/assembly</fromDir>
-						<toDir>framework/${project.version}</toDir>
+						<toDir>${project.id}/${project.version}</toDir>
 						<skip>false</skip>
 					</configuration>
 				</plugin>
