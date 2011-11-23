@@ -403,6 +403,10 @@
 			<url>${snapshot.url}</url>
 			<uniqueVersion>false</uniqueVersion>
 		</snapshotRepository>
+		<site>
+			<id>demoiselle.sourceforge.net</id>
+			<url>file://${project.build.directory}/tmp</url>
+		</site>
 	</distributionManagement>
 
 	<build>
@@ -469,8 +473,6 @@
 						<inputEncoding>${project.build.sourceEncoding}</inputEncoding>
 						<outputEncoding>${project.build.sourceEncoding}</outputEncoding>
 						<locales>pt_BR</locales>
-						<skip>true</skip>
-						<skipDeploy>true</skipDeploy>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -529,6 +531,27 @@
 			</extension>
 		</extensions>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>summary</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
 
 	<repositories>
 		<repository>
@@ -607,7 +630,7 @@
 		<maven.compiler.plugin.version>2.1</maven.compiler.plugin.version>
 		<maven.war.plugin.version>2.1.1</maven.war.plugin.version>
 		<maven.deploy.plugin.version>2.5</maven.deploy.plugin.version>
-		<maven.site.plugin.version>3.0</maven.site.plugin.version>
+		<maven.site.plugin.version>2.2</maven.site.plugin.version>
 		<maven.assembly.plugin.version>2.2-beta-5</maven.assembly.plugin.version>
 		<maven.javadoc.plugin.version>2.7</maven.javadoc.plugin.version>
 		<maven.source.plugin.version>2.1.2</maven.source.plugin.version>
@@ -646,9 +669,9 @@
 		<demoiselle.report.version>2.0.1</demoiselle.report.version>
 		<demoiselle.authorization.version>2.0.1</demoiselle.authorization.version>
 
-		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url>
+		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
 		<!--
-		<htdocs.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</htdocs.url>
+		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url>
 		-->
 		<repository.url>${htdocs.url}/repository/release</repository.url>
 		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>

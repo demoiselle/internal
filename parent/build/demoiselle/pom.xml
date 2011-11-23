@@ -64,58 +64,56 @@
 	</organization>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>wagon-maven-plugin</artifactId>
-					<configuration>
-						<serverId>demoiselle.sourceforge.net</serverId>
-						<url>${upload.url}</url>
-						<fromDir>${project.build.directory}/assembly</fromDir>
-						<toDir>${project.context}/${project.version}</toDir>
-						<skip>false</skip>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<configuration>
-						<autoVersionSubmodules>true</autoVersionSubmodules>
-						<preparationGoals>clean install</preparationGoals>
-						<goals>deploy wagon:upload site site:deploy</goals>
-						<developmentVersion>${project.nextVersion}</developmentVersion>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<configuration>
-						<siteDirectory>${basedir}/site</siteDirectory>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<configuration>
-						<finalName>demoiselle-framework-${project.version}</finalName>
-						<outputDirectory>${project.build.directory}/assembly</outputDirectory>
-						<descriptors>
-							<descriptor>assembly/src.xml</descriptor>
-							<descriptor>assembly/bin.xml</descriptor>
-						</descriptors>
-					</configuration>
-					<executions>
-						<execution>
-							<phase>package</phase>
-							<goals>
-								<goal>assembly</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<configuration>
+					<serverId>demoiselle.sourceforge.net</serverId>
+					<url>${upload.url}</url>
+					<fromDir>${project.build.directory}/assembly</fromDir>
+					<toDir>${project.context}/${project.version}</toDir>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<preparationGoals>clean install</preparationGoals>
+					<goals>deploy wagon:upload site site:deploy</goals>
+					<developmentVersion>${project.nextVersion}</developmentVersion>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<configuration>
+					<siteDirectory>${basedir}/site</siteDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<finalName>demoiselle-framework-${project.version}</finalName>
+					<outputDirectory>${project.build.directory}/assembly</outputDirectory>
+					<descriptors>
+						<descriptor>assembly/src.xml</descriptor>
+						<descriptor>assembly/bin.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>assembly</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 
 	<scm>
@@ -126,7 +124,7 @@
 
 	<properties>
 		<project.context>${project.alias}</project.context>
-		<site.unversioned.url>${base.url}/${project.context}</site.unversioned.url>
+		<site.unversioned.url>${htdocs.url}/${project.context}</site.unversioned.url>
 		<site.url>${site.unversioned.url}/${project.version}</site.url>
 		<!--
 		<upload.url>file:///tmp/demoiselle/download</upload.url>
