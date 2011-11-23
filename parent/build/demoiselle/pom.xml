@@ -52,7 +52,9 @@
 
 	<name>Demoiselle Build Aggregator Parent</name>
 	<description>
-		TODO
+		Contém as informações de build comuns a todos os projetos do Demoiselle (framework,
+		components, etc). Se você é usuário do Demoiselle, certamente este POM não servirá
+		para você.
 	</description>
 	<url>http://www.frameworkdemoiselle.gov.br/</url>
 

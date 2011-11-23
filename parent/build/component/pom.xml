@@ -52,7 +52,8 @@
 
 	<name>Demoiselle Component Build Aggegator Parent</name>
 	<description>
-		Contém as informações comum a todos os builds dos componentes do Demoiselle.
+		Contém as informações de build comuns a todos os componentes do Demoiselle.
+		Se você é usuário dos componentes, certamente este POM não servirá para você.
 	</description>
 
 	<build>

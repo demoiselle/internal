@@ -44,9 +44,10 @@
 	<version>1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>Demoiselle Root Parent</name>
+	<name>Demoiselle Parent</name>
 	<description>
-		TODO
+		Contém as informações comuns a todos os projetos do Demoiselle (framework, components, etc).
+		Se você é usuário do Demoiselle, certamente este POM não servirá para você.
 	</description>
 	<url>http://www.frameworkdemoiselle.gov.br/</url>
 
@@ -644,7 +645,7 @@
 		<demoiselle.valitation.version>2.0.0</demoiselle.valitation.version>
 		<demoiselle.report.version>2.0.1</demoiselle.report.version>
 		<demoiselle.authorization.version>2.0.1</demoiselle.authorization.version>
-		
+
 		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url>
 		<!--
 		<htdocs.url>sftp://web.sourceforge.net/home/groups/d/de/demoiselle/htdocs</htdocs.url>
