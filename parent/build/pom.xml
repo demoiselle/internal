@@ -50,10 +50,9 @@
 		<relativePath>../root/pom.xml</relativePath>
 	</parent>
 
-	<name>Demoiselle Parent</name>
+	<name>Demoiselle Build Aggregator Parent</name>
 	<description>
-		Contém as informações de build comum a todos os projetos do Framework Demoiselle.
-		Se você é usuário do framework, certamente este POM não servirá para você.
+		TODO
 	</description>
 	<url>http://www.frameworkdemoiselle.gov.br/</url>
 
@@ -72,7 +71,7 @@
 						<serverId>demoiselle.sourceforge.net</serverId>
 						<url>${upload.url}</url>
 						<fromDir>${project.build.directory}/assembly</fromDir>
-						<toDir>${project.alias}/${project.version}</toDir>
+						<toDir>${project.context}/${project.version}</toDir>
 						<skip>false</skip>
 					</configuration>
 				</plugin>
@@ -124,7 +123,12 @@
 	</scm>
 
 	<properties>
-		<site.context>${project.alias}</site.context>
-		<site.url>${base.url}/${site.context}/${project.version}/</site.url>
+		<project.context>${project.alias}</project.context>
+		<site.unversioned.url>${base.url}/${project.context}</site.unversioned.url>
+		<site.url>${site.unversioned.url}/${project.version}</site.url>
+		<!--
+		<upload.url>file:///tmp/demoiselle/download</upload.url>
+		-->
+		<upload.url>sftp://web.sourceforge.net/home/frs/project/d/de/demoiselle</upload.url>
 	</properties>
 </project>

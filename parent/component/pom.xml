@@ -39,14 +39,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>demoiselle-component-parent</artifactId>
+	<artifactId>demoiselle-component-build-parent</artifactId>
 	<version>1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
-	<name>Demoiselle Component Parent</name>
-	<description>
-		Contém as informações de build comum a todos os componentes do Demoiselle.
-	</description>
 
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
@@ -54,4 +49,71 @@
 		<version>1-SNAPSHOT</version>
 		<relativePath>../root/pom.xml</relativePath>
 	</parent>
+
+	<name>Demoiselle Component Build Aggegator Parent</name>
+	<description>
+		Contém as informações comum a todos os builds dos componentes do Demoiselle.
+	</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-portal-info</id>
+						<phase>site</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<overwrite>true</overwrite>
+							<outputDirectory>${project.build.directory}/portal</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/site/portal</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>upload-portal-info</id>
+						<phase>site-deploy</phase>
+						<goals>
+							<goal>upload</goal>
+						</goals>
+						<configuration>
+							<serverId>demoiselle.sourceforge.net</serverId>
+							<fromDir>${project.build.directory}/portal</fromDir>
+							<url>${site.unversioned.url}</url>
+							<toDir />
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>wagon-maven-plugin</artifactId>
+					<configuration>
+						<toDir>${project.alias}/${project.version}</toDir>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<properties>
+		<project.context>component/demoiselle-${project.alias}</project.context>
+	</properties>
 </project>
