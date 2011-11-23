@@ -45,9 +45,9 @@
 
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
-		<artifactId>demoiselle-root-parent</artifactId>
+		<artifactId>demoiselle-build-parent</artifactId>
 		<version>1-SNAPSHOT</version>
-		<relativePath>../root/pom.xml</relativePath>
+		<relativePath>../demoiselle/pom.xml</relativePath>
 	</parent>
 
 	<name>Demoiselle Component Build Aggegator Parent</name>
