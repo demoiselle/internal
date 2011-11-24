@@ -50,28 +50,14 @@
 		<relativePath>../demoiselle/pom.xml</relativePath>
 	</parent>
 
-	<name>demoiselle-documentation-parent</name>
-	<description>Parent para os documentos.</description>
+	<name>Documentation Parent</name>
+	<description>
+		Contém as informações comuns a todas as documentações do Demoiselle (framework,	components,
+		etc). Se você é usuário do Demoiselle, certamente este POM não servirá para você.
+	</description>
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<configuration>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
-					<goals>deploy</goals>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>wagon-maven-plugin</artifactId>
-				<version>1.0-beta-3</version>
-				<configuration>
-					<url>.</url>
-					<skip>true</skip>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.jboss.maven.plugins</groupId>
 				<artifactId>maven-jdocbook-plugin</artifactId>
@@ -153,22 +139,22 @@
 					</options>
 				</configuration>
 			</plugin>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>process-classes</phase>
-						<configuration>
-							<tasks>
-								<copy file="${basedir}/target/docbook/publish/pt-BR/pdf/${pdf.name}" todir="${basedir}" />
-							</tasks>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<artifactId>maven-antrun-plugin</artifactId> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<phase>process-classes</phase> -->
+<!-- 						<configuration> -->
+<!-- 							<tasks> -->
+<!-- 								<copy file="${basedir}/target/docbook/publish/pt-BR/pdf/${pdf.name}" todir="${basedir}" /> -->
+<!-- 							</tasks> -->
+<!-- 						</configuration> -->
+<!-- 						<goals> -->
+<!-- 							<goal>run</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>wagon-maven-plugin</artifactId>
@@ -178,13 +164,6 @@
 					<fromDir>${project.build.directory}/docbook/publish/pt-BR</fromDir>
 					<toDir>docs/${project.artifactId}/${project.version}</toDir>
 					<skip>false</skip>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<configuration>
-					<skip>true</skip>
 				</configuration>
 			</plugin>
 		</plugins>
