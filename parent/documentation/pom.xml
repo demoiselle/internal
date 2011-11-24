@@ -34,12 +34,14 @@
  ou escreva para a Fundação do Software Livre (FSF) Inc.,
  51 Franklin St, Fifth Floor, Boston, MA 02111-1301, USA.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>demoiselle-documentation-parent</artifactId>
 	<packaging>pom</packaging>
+	<version>1-SNAPSHOT</version>
 
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
@@ -47,4 +49,181 @@
 		<version>1-SNAPSHOT</version>
 		<relativePath>../demoiselle/pom.xml</relativePath>
 	</parent>
+
+	<name>demoiselle-documentation-parent</name>
+	<description>Parent para os documentos.</description>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<goals>deploy</goals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<version>1.0-beta-3</version>
+				<configuration>
+					<url>.</url>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jboss.maven.plugins</groupId>
+				<artifactId>maven-jdocbook-plugin</artifactId>
+				<extensions>true</extensions>
+				<version>${maven.jdocbook.plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>br.gov.frameworkdemoiselle.documentation</groupId>
+						<artifactId>demoiselle-docbook-xslt</artifactId>
+						<version>2.0.1</version>
+					</dependency>
+					<dependency>
+						<groupId>br.gov.frameworkdemoiselle.documentation</groupId>
+						<artifactId>demoiselle-jdocbook-style</artifactId>
+						<version>2.0.1</version>
+						<type>jdocbook-style</type>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss</groupId>
+						<artifactId>jbossorg-jdocbook-style</artifactId>
+						<version>${jbossorg.docbook.version}</version>
+						<type>pom</type>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.weld</groupId>
+						<artifactId>weld-docbook-xslt</artifactId>
+						<version>${weld.docbook.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.seam</groupId>
+						<artifactId>seam-docbook-xslt</artifactId>
+						<version>${seam.docbook.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss.seam</groupId>
+						<artifactId>seam-jdocbook-style</artifactId>
+						<version>${seam.docbook.version}</version>
+						<type>jdocbook-style</type>
+					</dependency>
+					<dependency>
+						<groupId>org.jboss</groupId>
+						<artifactId>jbossorg-jdocbook-style</artifactId>
+						<version>${jbossorg.docbook.version}</version>
+						<type>jdocbook-style</type>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<sourceDirectory>${project.basedir}</sourceDirectory>
+					<sourceDocumentName>master.xml</sourceDocumentName>
+					<masterTranslation>pt-BR</masterTranslation>
+					<imageResource>
+						<directory>${project.basedir}/pt-BR</directory>
+						<includes>
+							<include>images/*.png</include>
+						</includes>
+					</imageResource>
+					<formats>
+						<format>
+							<formatName>pdf</formatName>
+							<stylesheetResource>classpath:/xslt/br/gov/frameworkdemoiselle/pdf.xsl</stylesheetResource>
+							<finalName>${pdf.name}</finalName>
+						</format>
+						<format>
+							<formatName>html</formatName>
+							<stylesheetResource>classpath:/xslt/br/gov/frameworkdemoiselle/xhtml.xsl</stylesheetResource>
+							<finalName>index.html</finalName>
+						</format>
+						<format>
+							<formatName>html_single</formatName>
+							<stylesheetResource>classpath:/xslt/br/gov/frameworkdemoiselle/xhtml-single.xsl</stylesheetResource>
+							<finalName>index.html</finalName>
+						</format>
+					</formats>
+					<options>
+						<xmlTransformerType>saxon</xmlTransformerType>
+						<xincludeSupported>true</xincludeSupported>
+						<injectionDateFormat>dd/MM/yyyy</injectionDateFormat>
+						<docbookVersion>1.72.0</docbookVersion>
+					</options>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>process-classes</phase>
+						<configuration>
+							<tasks>
+								<copy file="${basedir}/target/docbook/publish/pt-BR/pdf/${pdf.name}" todir="${basedir}" />
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<configuration>
+					<serverId>demoiselle.sourceforge.net</serverId>
+					<url>${htdocs.url}</url>
+					<fromDir>${project.build.directory}/docbook/publish/pt-BR</fromDir>
+					<toDir>docs/${project.artifactId}/${project.version}</toDir>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus.jboss.org</id>
+			<name>JBoss Maven Repository</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>public-jboss</id>
+			<name>JBoss Public Maven Repository</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>demoiselle.sourceforge.net</id>
+			<name>Demoiselle Maven Repository</name>
+			<url>http://demoiselle.sourceforge.net/repository/release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>snapshot.demoiselle.sourceforge.net</id>
+			<name>Demoiselle SnapShot Maven Repository</name>
+			<url>http://demoiselle.sourceforge.net/repository/snapshot</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<properties>
+		<pdf.name>${project.artifactId}.pdf</pdf.name>
+		<maven.jdocbook.plugin.version>2.3.5</maven.jdocbook.plugin.version>
+		<weld.docbook.version>1.1.1-Beta5</weld.docbook.version>
+		<seam.docbook.version>1.1.0.GA</seam.docbook.version>
+		<jbossorg.docbook.version>1.1.1</jbossorg.docbook.version>
+	</properties>
 </project>
