@@ -100,7 +100,7 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
 					<configuration>
-						<finalName>demoiselle-framework-${project.version}</finalName>
+						<finalName>demoiselle-${project.alias}-${project.version}</finalName>
 						<outputDirectory>${project.build.directory}/assembly</outputDirectory>
 						<descriptors>
 							<descriptor>assembly/src.xml</descriptor>

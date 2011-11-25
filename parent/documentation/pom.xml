@@ -58,6 +58,35 @@
 
 	<build>
 		<plugins>
+			<!--
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>process-classes</phase>
+						<configuration>
+							<tasks>
+								<copy file="${basedir}/target/docbook/publish/pt-BR/pdf/${pdf.name}" todir="${basedir}" />
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			-->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>wagon-maven-plugin</artifactId>
+				<configuration>
+					<serverId>demoiselle.sourceforge.net</serverId>
+					<url>${htdocs.url}</url>
+					<fromDir>${project.build.directory}/docbook/publish/pt-BR</fromDir>
+					<toDir>docs/${project.context}/${project.version}</toDir>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.jboss.maven.plugins</groupId>
 				<artifactId>maven-jdocbook-plugin</artifactId>
@@ -139,33 +168,6 @@
 					</options>
 				</configuration>
 			</plugin>
-<!-- 			<plugin> -->
-<!-- 				<artifactId>maven-antrun-plugin</artifactId> -->
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!-- 						<phase>process-classes</phase> -->
-<!-- 						<configuration> -->
-<!-- 							<tasks> -->
-<!-- 								<copy file="${basedir}/target/docbook/publish/pt-BR/pdf/${pdf.name}" todir="${basedir}" /> -->
-<!-- 							</tasks> -->
-<!-- 						</configuration> -->
-<!-- 						<goals> -->
-<!-- 							<goal>run</goal> -->
-<!-- 						</goals> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
-<!-- 			</plugin> -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>wagon-maven-plugin</artifactId>
-				<configuration>
-					<serverId>demoiselle.sourceforge.net</serverId>
-					<url>${htdocs.url}</url>
-					<fromDir>${project.build.directory}/docbook/publish/pt-BR</fromDir>
-					<toDir>docs/${project.artifactId}/${project.version}</toDir>
-					<skip>false</skip>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 
@@ -185,16 +187,6 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>demoiselle.sourceforge.net</id>
-			<name>Demoiselle Maven Repository</name>
-			<url>http://demoiselle.sourceforge.net/repository/release</url>
-		</pluginRepository>
-		<pluginRepository>
-			<id>snapshot.demoiselle.sourceforge.net</id>
-			<name>Demoiselle SnapShot Maven Repository</name>
-			<url>http://demoiselle.sourceforge.net/repository/snapshot</url>
 		</pluginRepository>
 	</pluginRepositories>
 
