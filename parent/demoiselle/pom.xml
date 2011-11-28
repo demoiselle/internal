@@ -389,6 +389,13 @@
 				<artifactId>demoiselle-authorization</artifactId>
 				<version>${demoiselle.authorization.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>net.sf.jasperreports</groupId>
+				<artifactId>jasperreports</artifactId>
+				<version>${jasperreports.version}</version>
+			</dependency>
+			
 		</dependencies>
 	</dependencyManagement>
 
@@ -663,6 +670,7 @@
 		<weld.version>1.1.2.Final</weld.version>
 		<commons.configuration.version>1.5</commons.configuration.version>
 		<hsqldb.version>1.8.0.10</hsqldb.version>
+		<jasperreports.version>4.0.1</jasperreports.version>
 
 		<demoiselle.junit.version>2.2.1</demoiselle.junit.version>
 		<demoiselle.vaadin.version>2.2.1</demoiselle.vaadin.version>
