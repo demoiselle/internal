@@ -389,13 +389,24 @@
 				<artifactId>demoiselle-authorization</artifactId>
 				<version>${demoiselle.authorization.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>net.sf.jasperreports</groupId>
 				<artifactId>jasperreports</artifactId>
 				<version>${jasperreports.version}</version>
 			</dependency>
-			
+
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>${mail.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jvnet.mock-javamail</groupId>
+				<artifactId>mock-javamail</artifactId>
+				<version>${mockjavamail.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -671,6 +682,8 @@
 		<commons.configuration.version>1.5</commons.configuration.version>
 		<hsqldb.version>1.8.0.10</hsqldb.version>
 		<jasperreports.version>4.0.1</jasperreports.version>
+		<mail.version>1.4.4</mail.version>
+		<mockjavamail.version>1.9</mockjavamail.version>
 
 		<demoiselle.junit.version>2.2.1</demoiselle.junit.version>
 		<demoiselle.vaadin.version>2.2.1</demoiselle.vaadin.version>
@@ -680,9 +693,7 @@
 		<demoiselle.authorization.version>2.0.1</demoiselle.authorization.version>
 
 		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
-		<!--
-		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url>
-		-->
+<!-- 		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url> -->
 		<repository.url>${htdocs.url}/repository/release</repository.url>
 		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
