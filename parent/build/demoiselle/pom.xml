@@ -56,7 +56,7 @@
 		components, etc). Se você é usuário do Demoiselle, certamente este POM não servirá
 		para você.
 	</description>
-	<url>http://www.frameworkdemoiselle.gov.br/</url>
+	<url>http://www.frameworkdemoiselle.gov.br</url>
 
 	<organization>
 		<name>SERPRO - Serviço Federal de Processamento de Dados</name>
@@ -123,7 +123,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:demoiselle/${project.alias}.git</connection>
 		<developerConnection>scm:git:git@github.com:demoiselle/${project.alias}.git</developerConnection>
-		<url>https://github.com/demoiselle/${project.alias}</url>
+		<url>scm:git:git@github.com:demoiselle/${project.alias}.git</url>
 	</scm>
 
 	<properties>
