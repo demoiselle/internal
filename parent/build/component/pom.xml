@@ -40,7 +40,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>demoiselle-component-build-parent</artifactId>
-	<version>1-SNAPSHOT</version>
+	<version>1</version>
 	<packaging>pom</packaging>
 
 	<parent>
