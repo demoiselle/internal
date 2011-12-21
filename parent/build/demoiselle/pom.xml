@@ -46,7 +46,7 @@
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-parent</artifactId>
-		<version>2-SNAPSHOT</version>
+		<version>1</version>
 		<relativePath>../../demoiselle/pom.xml</relativePath>
 	</parent>
 
@@ -119,12 +119,20 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+
 	<scm>
-	   <connection>scm:git:git://github.com/demoiselle/${project.alias}.git</connection>
-	   <developerConnection>scm:git:git://github.com/demoiselle/${project.alias}.git</developerConnection>
-	   <url>https://github.com/demoiselle/${project.alias}</url>
+		<connection>scm:git:git://github.com/demoiselle/${project.alias}.git</connection>
+		<developerConnection>scm:git:git://github.com/demoiselle/${project.alias}.git</developerConnection>
+		<url>https://github.com/demoiselle/${project.alias}</url>
 	</scm>
+
+	<repositories>
+		<repository>
+			<id>demoiselle.sourceforge.net</id>
+			<name>Demoiselle Maven Repository</name>
+			<url>http://demoiselle.sourceforge.net/repository/release</url>
+		</repository>
+	</repositories>
 
 	<properties>
 		<project.context>${project.alias}</project.context>
