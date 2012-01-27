@@ -448,6 +448,7 @@
 				<artifactId>maven-install-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>default-install</id>
 						<configuration>
 							<createChecksum>true</createChecksum>
 						</configuration>
