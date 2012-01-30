@@ -438,7 +438,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>wagon-maven-plugin</artifactId>
-				<version>${wagon.maven.plugin.version}</version>
+				<version>${wagon.plugin.version}</version>
 				<configuration>
 					<url>.</url>
 					<skip>true</skip>
@@ -668,7 +668,7 @@
 		<maven.resources.plugin.version>2.5</maven.resources.plugin.version>
 		<maven.cobertura.plugin.version>2.4</maven.cobertura.plugin.version>
 		<maven.install.plugin.version>2.3.1</maven.install.plugin.version>
-		<wagon.maven.plugin.version>1.0-beta-3</wagon.maven.plugin.version>
+		<wagon.plugin.version>1.0-beta-3</wagon.plugin.version>
 
 		<java.version>1.6</java.version>
 		<javaee.version>6.0</javaee.version>
