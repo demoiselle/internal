@@ -432,6 +432,12 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
+				<excludes>
+					<exclude>**/*.jasper</exclude>
+					<exclude>**/*.jpg</exclude>
+					<exclude>**/*.png</exclude>
+					<exclude>**/*.gif</exclude>
+				</excludes>
 			</resource>
 		</resources>
 		<plugins>
