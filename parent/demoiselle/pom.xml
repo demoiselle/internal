@@ -708,7 +708,7 @@
 		<demoiselle.vaadin.version>2.2.1</demoiselle.vaadin.version>
 		<demoiselle.shiro.version>2.2.1</demoiselle.shiro.version>
 		<demoiselle.valitation.version>2.0.0</demoiselle.valitation.version>
-		<demoiselle.report.version>2.0.2</demoiselle.report.version>
+		<demoiselle.report.version>2.0.3</demoiselle.report.version>
 		<demoiselle.authorization.version>2.0.1</demoiselle.authorization.version>
 
 		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
