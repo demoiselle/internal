@@ -439,6 +439,16 @@
 					<exclude>**/*.gif</exclude>
 				</excludes>
 			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*.jasper</include>
+					<include>**/*.jpg</include>
+					<include>**/*.png</include>
+					<include>**/*.gif</include>
+				</includes>
+			</resource>
 		</resources>
 		<plugins>
 			<plugin>
