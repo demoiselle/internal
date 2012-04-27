@@ -46,7 +46,7 @@
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-parent</artifactId>
-		<version>1</version>
+		<version>3-SNAPSHOT</version>
 		<relativePath>../demoiselle/pom.xml</relativePath>
 	</parent>
 
@@ -187,6 +187,16 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>demoiselle.sourceforge.net</id>
+			<name>Demoiselle Maven Repository</name>
+			<url>http://demoiselle.sourceforge.net/repository/release</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>snapshot.demoiselle.sourceforge.net</id>
+			<name>Demoiselle Maven Repository</name>
+			<url>http://demoiselle.sourceforge.net/repository/snapshot</url>
 		</pluginRepository>
 	</pluginRepositories>
 
