@@ -41,7 +41,7 @@
 
 	<artifactId>demoiselle-documentation-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>2</version>
+	<version>3-SNAPSHOT</version>
 
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
