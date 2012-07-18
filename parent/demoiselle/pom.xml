@@ -722,8 +722,8 @@
 		<demoiselle.report.version>2.0.3</demoiselle.report.version>
 		<demoiselle.authorization.version>2.0.1</demoiselle.authorization.version>
 
-<!-- 		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url> -->
-		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url>
+ 		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
+<!--		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url> -->
 		<repository.url>${htdocs.url}/repository/release</repository.url>
 		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
