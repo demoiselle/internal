@@ -329,27 +329,27 @@
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle</groupId>
 				<artifactId>demoiselle-core</artifactId>
-				<version>2.2.2</version>
+				<version>${demoiselle.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle</groupId>
 				<artifactId>demoiselle-jta</artifactId>
-				<version>2.2.2</version>
+				<version>${demoiselle.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle</groupId>
 				<artifactId>demoiselle-jpa</artifactId>
-				<version>2.2.2</version>
+				<version>${demoiselle.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle</groupId>
 				<artifactId>demoiselle-jsf</artifactId>
-				<version>2.2.2</version>
+				<version>${demoiselle.framework.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle</groupId>
 				<artifactId>demoiselle-se</artifactId>
-				<version>2.2.2</version>
+				<version>${demoiselle.framework.version}</version>
 			</dependency>
 
 			<!-- Demoiselle Components -->
@@ -714,6 +714,7 @@
 		<mail.version>1.4.4</mail.version>
 		<mockjavamail.version>1.9</mockjavamail.version>
 
+		<demoiselle.framework.version>2.3.0-BETA1-SNAPSHOT</demoiselle.framework.version>
 		<demoiselle.junit.version>2.3.0-BETA1-SNAPSHOT</demoiselle.junit.version>
 		<demoiselle.vaadin.version>2.2.1</demoiselle.vaadin.version>
 		<demoiselle.shiro.version>2.2.1</demoiselle.shiro.version>
@@ -721,8 +722,8 @@
 		<demoiselle.report.version>2.0.3</demoiselle.report.version>
 		<demoiselle.authorization.version>2.0.1</demoiselle.authorization.version>
 
-		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
-<!-- 		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url> -->
+<!-- 		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url> -->
+		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url>
 		<repository.url>${htdocs.url}/repository/release</repository.url>
 		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
