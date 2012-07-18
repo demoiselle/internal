@@ -41,7 +41,7 @@
 
 	<groupId>br.gov.frameworkdemoiselle</groupId>
 	<artifactId>demoiselle-parent</artifactId>
-	<version>4-SNAPSHOT</version>
+	<version>4</version>
 	<packaging>pom</packaging>
 
 	<name>Demoiselle Parent</name>
@@ -714,8 +714,8 @@
 		<mail.version>1.4.4</mail.version>
 		<mockjavamail.version>1.9</mockjavamail.version>
 
-		<demoiselle.framework.version>2.3.0-BETA1-SNAPSHOT</demoiselle.framework.version>
-		<demoiselle.junit.version>2.3.0-BETA1-SNAPSHOT</demoiselle.junit.version>
+		<demoiselle.framework.version>2.3.0-BETA1</demoiselle.framework.version>
+		<demoiselle.junit.version>2.3.0-BETA1</demoiselle.junit.version>
 		<demoiselle.vaadin.version>2.2.1</demoiselle.vaadin.version>
 		<demoiselle.shiro.version>2.2.1</demoiselle.shiro.version>
 		<demoiselle.valitation.version>2.0.0</demoiselle.valitation.version>
