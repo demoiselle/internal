@@ -122,20 +122,14 @@
 			<dependency>
 				<groupId>javax.el</groupId>
 				<artifactId>el-api</artifactId>
-				<version>2.2</version>
+				<version>${el.version}</version>
 			</dependency>
 
 			<!-- jsr-??? api -->
 			<dependency>
 				<groupId>org.glassfish.web</groupId>
 				<artifactId>el-impl</artifactId>
-				<version>2.1.2-b04</version>
-				<exclusions>
-					<exclusion>
-						<groupId>javax.el</groupId>
-						<artifactId>el-api</artifactId>
-					</exclusion>
-				</exclusions>
+				<version>${el.version}</version>
 			</dependency>
 
 			<!-- jsr-314 api -->
@@ -691,7 +685,8 @@
 		<cdi.version>1.0-SP4</cdi.version>
 		<validation.version>1.0.0.GA</validation.version>
 		<transaction.version>1.1</transaction.version>
-		<jsf.version>2.0.3</jsf.version>
+		<jsf.version>2.1.11</jsf.version>
+		<el.version>2.2</el.version>
 		<servlet.version>2.5</servlet.version>
 		<persistence.version>2.0.1</persistence.version>
 
@@ -722,7 +717,7 @@
 		<demoiselle.report.version>2.0.3</demoiselle.report.version>
 		<demoiselle.authorization.version>2.0.2</demoiselle.authorization.version>
 
- 		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
+		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
 <!--		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url> -->
 		<repository.url>${htdocs.url}/repository/release</repository.url>
 		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
