@@ -709,7 +709,7 @@
 		<mail.version>1.4.4</mail.version>
 		<mockjavamail.version>1.9</mockjavamail.version>
 
-		<demoiselle.framework.version>2.3.0-BETA1</demoiselle.framework.version>
+		<demoiselle.framework.version>2.3.0-BETA2</demoiselle.framework.version>
 		<demoiselle.junit.version>2.3.0-BETA2</demoiselle.junit.version>
 		<demoiselle.vaadin.version>2.2.1</demoiselle.vaadin.version>
 		<demoiselle.shiro.version>2.2.2</demoiselle.shiro.version>
