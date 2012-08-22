@@ -41,7 +41,7 @@
 
 	<groupId>br.gov.frameworkdemoiselle</groupId>
 	<artifactId>demoiselle-parent</artifactId>
-	<version>6-SNAPSHOT</version>
+	<version>5</version>
 	<packaging>pom</packaging>
 
 	<name>Demoiselle Parent</name>
