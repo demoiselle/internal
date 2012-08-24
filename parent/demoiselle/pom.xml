@@ -41,7 +41,7 @@
 
 	<groupId>br.gov.frameworkdemoiselle</groupId>
 	<artifactId>demoiselle-parent</artifactId>
-	<version>6-SNAPSHOT</version>
+	<version>5</version>
 	<packaging>pom</packaging>
 
 	<name>Demoiselle Parent</name>
@@ -343,6 +343,11 @@
 			<dependency>
 				<groupId>br.gov.frameworkdemoiselle</groupId>
 				<artifactId>demoiselle-se</artifactId>
+				<version>${demoiselle.framework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>br.gov.frameworkdemoiselle</groupId>
+				<artifactId>demoiselle-servlet</artifactId>
 				<version>${demoiselle.framework.version}</version>
 			</dependency>
 
@@ -711,7 +716,7 @@
 
 		<demoiselle.framework.version>2.3.0-BETA2</demoiselle.framework.version>
 		<demoiselle.junit.version>2.3.0-BETA2</demoiselle.junit.version>
-		<demoiselle.vaadin.version>2.2.1</demoiselle.vaadin.version>
+		<demoiselle.vaadin.version>2.3.0-BETA1</demoiselle.vaadin.version>
 		<demoiselle.shiro.version>2.2.2</demoiselle.shiro.version>
 		<demoiselle.valitation.version>2.0.0</demoiselle.valitation.version>
 		<demoiselle.report.version>2.0.3</demoiselle.report.version>
