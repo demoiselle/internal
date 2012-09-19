@@ -184,34 +184,17 @@
 								<goal>jar</goal>
 							</goals>
 						</execution>
-						<!-- <execution> -->
-						<!-- <id>javadoc</id> -->
-						<!-- <phase>site</phase> -->
-						<!-- <goals> -->
-						<!-- <goal>javadoc</goal> -->
-						<!-- </goals> -->
-						<!-- <configuration> -->
-						<!-- <reportOutputDirectory>${project.reporting.outputDirectory}/api/${project.name}/${project.version}/html_single</reportOutputDirectory> -->
-						<!-- <destDir>/</destDir> -->
-						<!-- </configuration> -->
-						<!-- </execution> -->
 					</executions>
+					<!--
+					<configuration>
+						<detectLinks>false</detectLinks>
+					</configuration>
+					-->
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>cobertura-maven-plugin</artifactId>
 					<version>${maven.cobertura.plugin.version}</version>
-					<!-- <executions> -->
-					<!-- <execution> -->
-					<!-- <phase>site</phase> -->
-					<!-- <goals> -->
-					<!-- <goal>cobertura</goal> -->
-					<!-- </goals> -->
-					<!-- <configuration> -->
-					<!-- <outputDirectory>${project.reporting.outputDirectory}/cobertura/${project.name}/${project.version}/html_single</outputDirectory> -->
-					<!-- </configuration> -->
-					<!-- </execution> -->
-					<!-- </executions> -->
 				</plugin>
 			</plugins>
 		</pluginManagement>
