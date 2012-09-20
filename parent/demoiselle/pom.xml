@@ -239,6 +239,16 @@
 			<name>Sonatype Nexus Snapshots</name>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</repository>
+		
+		<!-- Legacy -->
+		<repository>
+			<id>demoiselle.sourceforge.net-release</id>
+			<url>http://demoiselle.sourceforge.net/repository/release</url>
+		</repository>
+		<repository>
+			<id>snapshot.sourceforge.net-release</id>
+			<url>http://demoiselle.sourceforge.net/repository/snapshot</url>
+		</repository>
 	</repositories>
 
 	<properties>
