@@ -43,34 +43,30 @@
 	<version>6-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
 	<name>Demoiselle Parent</name>
 	<description>
 		Contém as informações comuns a todos os projetos do Demoiselle (framework, components, etc).
 		Se você é usuário do Demoiselle, certamente este POM não servirá para você.
 	</description>
-	<url>http://www.frameworkdemoiselle.gov.br/</url>
+	<url>http://www.frameworkdemoiselle.gov.br</url>
+
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License, Version 3</name>
+			<url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
+		</license>
+	</licenses>
 
 	<organization>
 		<name>SERPRO - Serviço Federal de Processamento de Dados</name>
-		<url>http://www.frameworkdemoiselle.gov.br/</url>
+		<url>http://www.frameworkdemoiselle.gov.br</url>
 	</organization>
-
-	<distributionManagement>
-		<repository>
-			<id>demoiselle.sourceforge.net</id>
-			<url>${repository.url}</url>
-			<uniqueVersion>false</uniqueVersion>
-		</repository>
-		<snapshotRepository>
-			<id>demoiselle.sourceforge.net</id>
-			<url>${snapshot.url}</url>
-			<uniqueVersion>false</uniqueVersion>
-		</snapshotRepository>
-		<site>
-			<id>demoiselle.sourceforge.net</id>
-			<url>file://${project.build.directory}/tmp</url>
-		</site>
-	</distributionManagement>
 
 	<build>
 		<resources>
@@ -114,6 +110,20 @@
 						<configuration>
 							<createChecksum>true</createChecksum>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>${maven.gpg.plugin.version}</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
@@ -185,11 +195,6 @@
 							</goals>
 						</execution>
 					</executions>
-					<!--
-					<configuration>
-						<detectLinks>false</detectLinks>
-					</configuration>
-					-->
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -230,74 +235,9 @@
 
 	<repositories>
 		<repository>
-			<id>demoiselle.sourceforge.net</id>
-			<name>Demoiselle Maven Repository</name>
-			<url>http://demoiselle.sourceforge.net/repository/release</url>
-		</repository>
-		<repository>
-			<id>snapshot.demoiselle.sourceforge.net</id>
-			<name>Demoiselle Maven Repository</name>
-			<url>http://demoiselle.sourceforge.net/repository/snapshot</url>
-		</repository>
-		<repository>
-			<id>repository.jboss.org</id>
-			<name>JBoss Maven Repository</name>
-			<url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>nexus.jboss.org</id>
-			<name>JBoss Maven Repository</name>
-			<url>http://repository.jboss.org/nexus/content/groups/public</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>java.net.m2</id>
-			<name>java.net m2 repo</name>
-			<url>http://download.java.net/maven/2</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>prime-repo</id>
-			<name>Prime Technology Maven Repository</name>
-			<url>http://repository.primefaces.org</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>glassfish-repo</id>
-			<name>Glassfish Maven Repo</name>
-			<url>http://download.java.net/maven/glassfish</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>atlassian-repo</id>
-			<name>Atlassian Maven Repo</name>
-			<url>https://maven.atlassian.com/content/groups/public</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>datanucleus-repo</id>
-			<name>DataNucleus Maven Repo</name>
-			<url>http://www.datanucleus.org/downloads/maven2</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>vaadin-addons</id>
-			<url>http://maven.vaadin.com/vaadin-addons</url>
+			<id>sonatype-nexus</id>
+			<name>Sonatype Nexus</name>
+			<url>https://oss.sonatype.org/content/groups/public</url>
 		</repository>
 	</repositories>
 
@@ -313,11 +253,12 @@
 		<maven.cobertura.plugin.version>2.4</maven.cobertura.plugin.version>
 		<maven.install.plugin.version>2.3.1</maven.install.plugin.version>
 		<wagon.plugin.version>1.0-beta-3</wagon.plugin.version>
+		<maven.gpg.plugin.version>1.4</maven.gpg.plugin.version>
 
 		<java.version>1.6</java.version>
 
 		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
-<!--		<htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url> -->
+		<!-- <htdocs.url>file:///tmp/demoiselle/htdocs</htdocs.url> -->
 		<repository.url>${htdocs.url}/repository/release</repository.url>
 		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
