@@ -69,6 +69,42 @@
 	</organization>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>${eclipse.lifecycle.mapping.plugin.version}</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.jboss.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-jdocbook-plugin
+										</artifactId>
+										<versionRange>
+											[2.3.5,)
+										</versionRange>
+										<goals>
+											<goal>generate</goal>
+											<goal>resources</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<!--
 			<plugin>
@@ -119,7 +155,7 @@
 					<dependency>
 						<groupId>org.jboss</groupId>
 						<artifactId>jbossorg-jdocbook-style</artifactId>
-						<version>${jbossorg.docbook.version}</version>
+						<version>${jboss.docbook.version}</version>
 						<type>pom</type>
 					</dependency>
 					<dependency>
@@ -141,7 +177,7 @@
 					<dependency>
 						<groupId>org.jboss</groupId>
 						<artifactId>jbossorg-jdocbook-style</artifactId>
-						<version>${jbossorg.docbook.version}</version>
+						<version>${jboss.docbook.version}</version>
 						<type>jdocbook-style</type>
 					</dependency>
 				</dependencies>
@@ -218,31 +254,16 @@
 			<name>Sonatype Nexus Snapshots</name>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</repository>
-		<!--
-		<repository>
-			<id>repository.jboss.org</id>
-			<name>JBoss Maven Repository</name>
-			<url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>nexus.jboss.org</id>
-			<name>JBoss Maven Repository</name>
-			<url>http://repository.jboss.org/nexus/content/groups/public</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		-->
 	</repositories>
 
 	<properties>
 		<pdf.name>${project.artifactId}.pdf</pdf.name>
+
 		<maven.jdocbook.plugin.version>2.3.5</maven.jdocbook.plugin.version>
+		<eclipse.lifecycle.mapping.plugin.version>1.0.0</eclipse.lifecycle.mapping.plugin.version>
+
 		<weld.docbook.version>1.1.1-Beta5</weld.docbook.version>
 		<seam.docbook.version>1.1.0.GA</seam.docbook.version>
-		<jbossorg.docbook.version>1.1.1</jbossorg.docbook.version>
+		<jboss.docbook.version>1.1.1</jboss.docbook.version>
 	</properties>
 </project>
