@@ -39,13 +39,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>demoiselle-build-parent</artifactId>
-	<version>2-SNAPSHOT</version>
+	<version>2</version>
 	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-parent</artifactId>
-		<version>6-SNAPSHOT</version>
+		<version>6</version>
 		<relativePath>../../demoiselle/pom.xml</relativePath>
 	</parent>
 
