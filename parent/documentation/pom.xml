@@ -40,12 +40,12 @@
 
 	<artifactId>demoiselle-documentation-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>3-SNAPSHOT</version>
+	<version>3</version>
 
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-parent</artifactId>
-		<version>6-SNAPSHOT</version>
+		<version>6</version>
 		<relativePath>../demoiselle</relativePath>
 	</parent>
 
