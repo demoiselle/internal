@@ -89,7 +89,6 @@
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<preparationGoals>clean install</preparationGoals>
 					<goals>deploy wagon:upload site site:deploy</goals>
-					<developmentVersion>${project.nextVersion}</developmentVersion>
 				</configuration>
 			</plugin>
 			<plugin>
