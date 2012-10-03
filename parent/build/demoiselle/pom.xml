@@ -104,6 +104,11 @@
 			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>${maven.release.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
 					<configuration>
 						<finalName>demoiselle-${project.alias}-${project.version}</finalName>
@@ -158,6 +163,8 @@
 	</repositories>
 
 	<properties>
+		<maven.release.plugin.version>2.3.2</maven.release.plugin.version>
+
 		<project.context>${project.alias}</project.context>
 		<site.unversioned.url>${htdocs.url}/${project.context}</site.unversioned.url>
 		<site.url>${site.unversioned.url}/${project.version}</site.url>
