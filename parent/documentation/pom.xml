@@ -81,15 +81,9 @@
 							<pluginExecutions>
 								<pluginExecution>
 									<pluginExecutionFilter>
-										<groupId>
-											org.jboss.maven.plugins
-										</groupId>
-										<artifactId>
-											maven-jdocbook-plugin
-										</artifactId>
-										<versionRange>
-											[2.3.5,)
-										</versionRange>
+										<groupId>org.jboss.maven.plugins</groupId>
+										<artifactId>maven-jdocbook-plugin</artifactId>
+										<versionRange>[2.3.5,)</versionRange>
 										<goals>
 											<goal>generate</goal>
 											<goal>resources</goal>
