@@ -38,7 +38,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>demoiselle-internal-parent-build</artifactId>
+	<artifactId>demoiselle-internal-build</artifactId>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -53,18 +53,14 @@
 	</description>
 
 	<modules>
-		<module>build/demoiselle</module>
-		<module>build/component</module>
-		<module>demoiselle</module>
-		<module>documentation</module>
+		<module>parent/build/demoiselle</module>
+		<module>parent/build/component</module>
+		<module>parent/demoiselle</module>
+		<module>parent/documentation</module>
 	</modules>
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
@@ -115,5 +111,6 @@
 
 	<properties>
 		<project.alias>internal</project.alias>
+		<release.goals>deploy</release.goals>
 	</properties>
 </project>
