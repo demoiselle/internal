@@ -38,82 +38,48 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>demoiselle-component-build-parent</artifactId>
+	<artifactId>demoiselle-internal-parent-build</artifactId>
 	<packaging>pom</packaging>
 
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-build-parent</artifactId>
 		<version>8-SNAPSHOT</version>
-		<relativePath>../demoiselle</relativePath>
+		<relativePath>parent/build/demoiselle</relativePath>
 	</parent>
 
-	<name>Demoiselle Component Build Aggegator Parent</name>
+	<name>Demoiselle Internal Parent Build Aggregator</name>
 	<description>
-		Contém as informações de build comuns a todos os componentes do Demoiselle.
-		Se você é usuário dos componentes, certamente este POM não servirá para você.
 	</description>
-	<url>http://www.frameworkdemoiselle.gov.br</url>
 
-	<licenses>
-		<license>
-			<name>GNU Lesser General Public License, Version 3</name>
-			<url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
-		</license>
-	</licenses>
-
-	<organization>
-		<name>SERPRO - Serviço Federal de Processamento de Dados</name>
-		<url>http://www.serpro.gov.br</url>
-	</organization>
+	<modules>
+		<module>build/demoiselle</module>
+		<module>build/component</module>
+		<module>demoiselle</module>
+		<module>documentation</module>
+	</modules>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-portal-info</id>
-						<phase>site</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<overwrite>true</overwrite>
-							<outputDirectory>${project.build.directory}/portal</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${basedir}/site/portal</directory>
-									<filtering>true</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
+				<artifactId>maven-assembly-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>wagon-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>upload-portal-info</id>
-						<phase>site</phase>
-						<goals>
-							<goal>upload</goal>
-						</goals>
-						<configuration>
-							<serverId>demoiselle.sourceforge.net</serverId>
-							<url>${site.unversioned.url}</url>
-							<fromDir>${project.build.directory}/portal</fromDir>
-							<toDir />
-							<skip>false</skip>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
+	<scm>
+		<connection>scm:git:git@github.com:demoiselle/${project.alias}.git</connection>
+		<developerConnection>scm:git:git@github.com:demoiselle/${project.alias}.git</developerConnection>
+		<url>http://github.com/demoiselle/${project.alias}</url>
+	</scm>
 
 	<repositories>
 		<repository>
@@ -140,7 +106,14 @@
 		</repository>
 	</repositories>
 
+	<distributionManagement>
+		<site>
+			<id>demoiselle.sourceforge.net</id>
+			<url>${site.url}</url>
+		</site>
+	</distributionManagement>
+
 	<properties>
-		<project.context>component/demoiselle-${project.alias}</project.context>
+		<project.alias>internal</project.alias>
 	</properties>
 </project>

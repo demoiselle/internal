@@ -40,7 +40,6 @@
 
 	<artifactId>demoiselle-documentation-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>5-SNAPSHOT</version>
 
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>

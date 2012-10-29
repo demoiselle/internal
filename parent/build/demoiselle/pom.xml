@@ -39,7 +39,6 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>demoiselle-build-parent</artifactId>
-	<version>5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -89,6 +88,7 @@
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<preparationGoals>clean install</preparationGoals>
 					<goals>deploy wagon:upload site site:deploy</goals>
+					<releaseProfiles>sonatype-oss-release</releaseProfiles>
 				</configuration>
 			</plugin>
 			<plugin>
