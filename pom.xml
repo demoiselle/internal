@@ -48,7 +48,7 @@
 		<relativePath>parent/build/demoiselle</relativePath>
 	</parent>
 
-	<name>Demoiselle Internal Parent Build Aggregator</name>
+	<name>Demoiselle Internal Build Aggregator</name>
 	<description>
 	</description>
 
