@@ -134,6 +134,7 @@
 				<extensions>true</extensions>
 				<version>${maven.jdocbook.plugin.version}</version>
 				<dependencies>
+				<!-- gerar versão estável -->
 					<dependency>
 						<groupId>br.gov.frameworkdemoiselle.documentation</groupId>
 						<artifactId>demoiselle-docbook-xslt</artifactId>
