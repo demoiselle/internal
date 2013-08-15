@@ -40,7 +40,7 @@
 
 	<groupId>br.gov.frameworkdemoiselle</groupId>
 	<artifactId>demoiselle-parent</artifactId>
-	<version>9</version>
+	<version>10-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<parent>
@@ -367,8 +367,4 @@
 		<snapshot.url>${htdocs.url}/repository/snapshot</snapshot.url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
-  <scm>
-    <tag>9</tag>
-  </scm>
 </project>
