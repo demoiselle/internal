@@ -44,7 +44,7 @@
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-parent</artifactId>
-		<version>9-SNAPSHOT</version>
+		<version>10-SNAPSHOT</version>
 		<relativePath>../demoiselle</relativePath>
 	</parent>
 
@@ -70,7 +70,8 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -137,12 +138,12 @@
 					<dependency>
 						<groupId>br.gov.frameworkdemoiselle.documentation</groupId>
 						<artifactId>demoiselle-docbook-xslt</artifactId>
-						<version>2.0.1</version>
+						<version>${demoisele.docbook.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>br.gov.frameworkdemoiselle.documentation</groupId>
 						<artifactId>demoiselle-jdocbook-style</artifactId>
-						<version>2.0.1</version>
+						<version>${demoisele.docbook.version}</version>
 						<type>jdocbook-style</type>
 					</dependency>
 					<dependency>
@@ -275,5 +276,6 @@
 		<weld.docbook.version>1.1.1-Beta5</weld.docbook.version>
 		<seam.docbook.version>1.1.0.GA</seam.docbook.version>
 		<jboss.docbook.version>1.1.1</jboss.docbook.version>
+		<demoisele.docbook.version>2.0.2</demoisele.docbook.version>
 	</properties>
 </project>
