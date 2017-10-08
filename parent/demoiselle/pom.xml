@@ -183,16 +183,6 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>${maven.site.plugin.version}</version>
-					<configuration>
-						<inputEncoding>${project.build.sourceEncoding}</inputEncoding>
-						<outputEncoding>${project.build.sourceEncoding}</outputEncoding>
-						<locales>pt_BR</locales>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
 					<version>${maven.assembly.plugin.version}</version>
 				</plugin>
@@ -351,10 +341,6 @@
 	</repositories>
 
 	<distributionManagement>
-		<site>
-			<id>demoiselle.sourceforge.net</id>
-			<url>${site.url}</url>
-		</site>
 	</distributionManagement>
 
 	<properties>

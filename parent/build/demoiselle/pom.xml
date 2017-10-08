@@ -91,13 +91,6 @@
 					<releaseProfiles>sonatype-oss-release</releaseProfiles>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<configuration>
-					<siteDirectory>${basedir}/site</siteDirectory>
-				</configuration>
-			</plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -168,7 +161,7 @@
 		<project.context>${project.alias}</project.context>
 		<site.unversioned.url>${htdocs.url}/${project.context}</site.unversioned.url>
 		<site.url>${site.unversioned.url}/${project.version}</site.url>
-		<release.goals>deploy wagon:upload site site:deploy</release.goals>
+		<release.goals>deploy wagon:upload</release.goals>
 		
 		<!--
 		<upload.url>file:///tmp/demoiselle/download</upload.url>
