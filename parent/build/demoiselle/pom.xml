@@ -44,7 +44,7 @@
 	<parent>
 		<groupId>br.gov.frameworkdemoiselle</groupId>
 		<artifactId>demoiselle-parent</artifactId>
-		<version>11-RC3</version>
+		<version>11-SNAPSHOT</version>
 		<relativePath>../../demoiselle</relativePath>
 	</parent>
 
@@ -127,7 +127,7 @@
 		<connection>scm:git:git://github.com/demoiselle/${project.alias}.git</connection>
 		<developerConnection>scm:git:git://github.com/demoiselle/${project.alias}.git</developerConnection>
 		<url>https://github.com/demoiselle/${project.alias}</url>
-	  	<tag>11-RC3</tag>
+	  	<tag>HEAD</tag>
   	</scm>
 
 	<repositories>
