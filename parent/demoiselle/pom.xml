@@ -205,7 +205,7 @@
 								<goal>jar</goal>
 							</goals>
 							<configuration>
-								<additionalparam>-Xdoclint:none</additionalparam>
+								<!--<additionalparam>-Xdoclint:none</additionalparam>-->
 							</configuration>
 						</execution>
 					</executions>
