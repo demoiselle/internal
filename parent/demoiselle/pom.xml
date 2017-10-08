@@ -357,7 +357,7 @@
 		<wagon.plugin.version>1.0-beta-3</wagon.plugin.version>
 		<eclipse.lifecycle.mapping.plugin.version>1.0.0</eclipse.lifecycle.mapping.plugin.version>
 
-		<java.version>1.8</java.version>
+		<java.version>1.6</java.version>
 
 		<site.url>file://${project.build.directory}/tmp</site.url>
 		<htdocs.url>sftp://web.sourceforge.net/home/project-web/demoiselle/htdocs</htdocs.url>
