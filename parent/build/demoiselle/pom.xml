@@ -59,12 +59,19 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version><!--$NO-MVN-MAN-VER$ -->
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 					<preparationGoals>clean install</preparationGoals>
 					<goals>${release.goals}</goals>
-					<releaseProfiles>sonatype-oss-release</releaseProfiles>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.8.1</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 		<pluginManagement>
@@ -100,7 +107,7 @@
 
 	<scm>
 		<connection>scm:git:https://github.com/demoiselle/${project.alias}.git</connection>
-		<developerConnection>scm:git:https://github.com/demoiselle/${project.alias}.git</developerConnection>		
+		<developerConnection>scm:git:https://github.com/demoiselle/${project.alias}.git</developerConnection>
 		<url>http://github.com/demoiselle/${project.alias}</url>
 		<tag>HEAD</tag>
 	</scm>
@@ -136,7 +143,7 @@
 		<project.context>${project.alias}</project.context>
 		<site.unversioned.url>${htdocs.url}/${project.context}</site.unversioned.url>
 		<site.url>${site.unversioned.url}/${project.version}</site.url>
-		<release.goals>deploy wagon:upload</release.goals>
+		<release.goals>deploy</release.goals>
 
 		<!-- <upload.url>file:///tmp/demoiselle/download</upload.url> -->
 		<upload.url>sftp://web.sourceforge.net/home/frs/project/d/de/demoiselle</upload.url>
